@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 
 def model_prediction(test_image):
-    model= tf.keras.models.load_model(r"D:\project_folder\data\images\trained_cancer_model.h5")
+    model= tf.keras.models.load_model(r"D:\project_folder\Cancer-cells_detection\data\images\trained_cancer_model.h5")
     image= tf.keras.preprocessing.image.load_img(test_image,target_size=(128,128))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
     input_arr=np.array([input_arr])
@@ -13,7 +13,7 @@ st.sidebar.title("Cancer Cell Detection and Segmentation")
 app_mode = st.sidebar.selectbox('select page',['HOME','Cancer Cell Detection'])
 
 from PIL import Image
-img= Image.open('D:\project_folder\data\images\download.jpg')
+img= Image.open('D:\project_folder\Cancer-cells_detection\data\images\download.jpg')
 st.image(img)
 
 if(app_mode=='HOME'):
